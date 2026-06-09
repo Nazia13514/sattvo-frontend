@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sattvo - Nourish • Strength • Thrive</title>
+  <!-- Replace icon with generic/sattvo one later if needed, keep original for now -->
+  <link rel="icon" href="images/logo_top.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+
+      <!-- LEFT SIDE (LOGO + NAME) -->
+      <div class="logo-box">
+        <img src="images/logo_top.jpg" alt="Sattvo Logo"
+          style="height: 60px; width: auto; border-radius: 50%; display: block;">
+      </div>
+
+      <!-- RIGHT SIDE MENU -->
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="menu" id="nav-menu">
+        <a href="#" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#benefits" onclick="toggleMenu()">Benefits</a>
+        <a href="#shop" onclick="toggleMenu()">Products</a>
+        <a href="#order" onclick="toggleMenu()">Order Now</a>
+        <a href="#contactModal" onclick="toggleMenu(); openPolicyModal('contactModal')">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/hero_sattvo.png" alt="Sattvo Hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-box fade-up">
+      <h1>SATTVO</h1>
+      <p class="tagline">Nourish • Strength • Thrive</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-container container">
+
+      <!-- LEFT TEXT -->
+      <div class="about-content fade-up">
+        <span class="subtitle">ABOUT SATTVO</span>
+        <h2>Wholesome Nutrition<br>For Every Life</h2>
+        <div class="decorative-line">
+          <span class="leaf-icon">❦</span>
+        </div>
+        <p>
+          Sattvo is a thoughtfully crafted blend of millets, nuts, seeds and natural ingredients that brings you
+          complete nutrition in every bowl.
+        </p>
+        <p class="bold-text">Rooted in tradition. Made for modern living.</p>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="about-image fade-in">
+        <img src="images/about_new_2.png" alt="About Sattvo">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS (Why Sattvo) -->
+  <section id="benefits" class="benefits-section">
+    <div class="container">
+      <div class="benefits-grid">
+
+        <!-- BENEFIT 1 -->
+        <div class="benefit-card fade-up">
+          <div class="benefit-img-wrapper">
+            <img src="images/service1_new.png" alt="Strength">
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-icon">🛡️</div>
+            <h3>STRENGTH</h3>
+            <p>Builds natural strength and supports growth for all age groups.</p>
+          </div>
+        </div>
+
+        <!-- BENEFIT 2 -->
+        <div class="benefit-card fade-up" style="transition-delay: 0.1s;">
+          <div class="benefit-img-wrapper">
+            <img src="images/service2_new.png" alt="Nourishment">
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-icon">🌿</div>
+            <h3>NOURISHMENT</h3>
+            <p>Nourishes your body with the goodness of nuts, seeds, millets and herbs.</p>
+          </div>
+        </div>
+
+        <!-- BENEFIT 3 -->
+        <div class="benefit-card fade-up" style="transition-delay: 0.2s;">
+          <div class="benefit-img-wrapper">
+            <img src="images/service3_new.png" alt="Thrive">
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-icon">✨</div>
+            <h3>THRIVE</h3>
+            <p>Helps you stay active, focused and thrive each day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS (2 Rows Only) -->
+  <section id="shop" class="products-section light">
+    <div class="container center">
+      <span class="subtitle">OUR PRODUCTS</span>
+      <h2>Wholesome Blends For Every You</h2>
+      <div class="decorative-line center-line">
+        <span class="leaf-icon">❦</span>
+      </div>
+
+      <div class="products-grid">
+        <!-- ROW 1 & 2 combined into a grid of 4 items as per reference image -->
+        <!-- Product 1 -->
+        <div class="product-card fade-up">
+          <img src="images/product_sattvo.png" alt="Classic Sattvo">
+          <h3>WALNUTS SATTVO</h3>
+          <p class="desc">A timeless blend for everyday nutrition.</p>
+          <p class="price">₹ 350</p>
+          <div class="qty-selector">
+            <button type="button" onclick="changeQty(this, -1)">-</button>
+            <input type="number" value="1" min="1" readonly>
+            <button type="button" onclick="changeQty(this, 1)">+</button>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Classic Sattvo', this)">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card fade-up" style="transition-delay: 0.1s;">
+          <img src="images/product_sattvo.png" alt="Kids Sattvo">
+          <h3>CASHEW SATTVO</h3>
+          <p class="desc">Nutrition that supports growth and energy.</p>
+          <p class="price">₹ 350</p>
+          <div class="qty-selector">
+            <button type="button" onclick="changeQty(this, -1)">-</button>
+            <input type="number" value="1" min="1" readonly>
+            <button type="button" onclick="changeQty(this, 1)">+</button>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Kids Sattvo', this)">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card fade-up" style="transition-delay: 0.2s;">
+          <img src="images/product_sattvo.png" alt="Ayurvedic Sattvo">
+          <h3>PISTACHO SATTVO</h3>
+          <p class="desc">For immunity, balance and overall wellness.</p>
+          <p class="price">₹ 350</p>
+          <div class="qty-selector">
+            <button type="button" onclick="changeQty(this, -1)">-</button>
+            <input type="number" value="1" min="1" readonly>
+            <button type="button" onclick="changeQty(this, 1)">+</button>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Ayurvedic Sattvo', this)">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card fade-up" style="transition-delay: 0.3s;">
+          <img src="images/product_sattvo.png" alt="Sports Sattvo">
+          <h3>ALMOND SATTVO</h3>
+          <p class="desc">Fuel your strength and performance.</p>
+          <p class="price">₹ 350</p>
+          <div class="qty-selector">
+            <button type="button" onclick="changeQty(this, -1)">-</button>
+            <input type="number" value="1" min="1" readonly>
+            <button type="button" onclick="changeQty(this, 1)">+</button>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Sports Sattvo', this)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="section" id="order">
+    <div class="container center fade-up">
+      <span class="subtitle">ORDER NOW</span>
+      <h2>Bring Home The Goodness<br>Of Sattvo</h2>
+      <div class="decorative-line center-line">
+        <span class="leaf-icon">❦</span>
+      </div>
+
+      <div class="checkout-icons">
+        <div class="chk-icon">
+          <span>🍃</span>
+          <p>100% Natural<br>No Preservatives</p>
+        </div>
+        <div class="chk-icon">
+          <span>🌾</span>
+          <p>Made With<br>Premium Ingredients</p>
+        </div>
+        <div class="chk-icon">
+          <span>⭐</span>
+          <p>Freshly Crafted For<br>Maximum Nutrition</p>
+        </div>
+      </div>
+
+      <div class="checkout-wrapper">
+        <!-- Form -->
+        <form id="orderForm" class="styled-form">
+          <div class="form-row">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+          </div>
+
+          <input type="text" id="houseNo" placeholder="Email Address" required>
+
+          <div class="form-row">
+            <select
+              style="width: 50%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Inter', sans-serif;">
+              <option>Product</option>
+              <option>Classic Sattvo</option>
+              <option>Kids Sattvo</option>
+              <option>Ayurvedic Sattvo</option>
+              <option>Sports Sattvo</option>
+            </select>
+            <select
+              style="width: 50%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Inter', sans-serif;">
+              <option>Quantity</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+
+          <textarea id="landmark" placeholder="Delivery Address" rows="3" required></textarea>
+
+          <!-- Hidden inputs to keep checkout logic intact if it relies on these IDs -->
+          <input type="hidden" id="street1" value="N/A">
+          <input type="hidden" id="street2" value="">
+          <input type="hidden" id="city" value="N/A">
+          <input type="hidden" id="state" value="N/A">
+          <input type="hidden" id="pincode" value="000000">
+
+          <div class="order-actions">
+            <button type="submit" class="submit-btn" id="submitOrderBtn" disabled>PLACE ORDER &rarr;</button>
+            <button type="button" class="whatsapp-btn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="20">
+              ORDER ON WHATSAPP
+            </button>
+          </div>
+        </form>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+          <h3>Your Cart</h3>
+          <ul id="cartItemsList">
+            <li>Cart is empty</li>
+          </ul>
+          <div id="cartTotalDisplay" style="font-weight: bold; margin-top: 10px; display: none;">Total: ₹0</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUCCESS POPUP -->
+  <div id="successPopup" class="popup">
+    <div class="popup-box">
+      <h3>Order Placed Successfully</h3>
+      <p>
+        Your order has been successfully placed!
+        For faster service and verification, you will now be redirected to WhatsApp
+        to confirm your order and location.
+      </p>
+      <button onclick="goToWhatsApp()">Finish</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span>SATT<span class="gold">V</span>O</span>
+        <p>Nourish • Strength • Thrive</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#shop">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#process">Process</a>
+        <span onclick="openPolicyModal('contactModal')">Contact</span>
+      </div>
+      <div class="footer-socials">
+        <span>📸</span>
+        <span>💬</span>
+        <span>✉️</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- POLICY MODALS -->
+  <div id="privacyModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'privacyModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('privacyModal')">&times;</span>
+      <h4>Privacy Policy</h4>
+      <p>We respect customer privacy and securely process order information only for order fulfillment and support.</p>
+    </div>
+  </div>
+
+  <div id="termsModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'termsModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('termsModal')">&times;</span>
+      <h4>Terms &amp; Conditions</h4>
+      <p>Orders are processed after successful payment confirmation. Product availability and delivery timelines may
+        vary.</p>
+    </div>
+  </div>
+
+  <div id="refundModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'refundModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('refundModal')">&times;</span>
+      <h4>Refund Policy</h4>
+      <p>Refunds/replacements are considered only for damaged or incorrect products reported within 24 hours of
+        delivery.</p>
+    </div>
+  </div>
+
+  <div id="contactModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'contactModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('contactModal')">&times;</span>
+      <h4>Contact Information</h4>
+      <p>Sattvo Wellness, India<br>Phone: +91 7019268918</p>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Add simple intersection observer for fade animations
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-up, .fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
