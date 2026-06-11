@@ -139,8 +139,8 @@
         <!-- ROW 1 & 2 combined into a grid of 4 items as per reference image -->
         <!-- Product 1 -->
         <div class="product-card fade-up">
-          <img src="images/product_sattvo.png" alt="Classic Sattvo">
-          <h3>WALNUTS SATTVO</h3>
+          <img src="images/product_sattvo.png" alt="Walnut Sattvo">
+          <h3>WALNUT SATTVO</h3>
           <p class="desc">A timeless blend for everyday nutrition.</p>
           <p class="price">₹ 350</p>
           <div class="qty-selector">
@@ -148,12 +148,12 @@
             <input type="number" value="1" min="1" readonly>
             <button type="button" onclick="changeQty(this, 1)">+</button>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Classic Sattvo', this)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Walnut Sattvo', this)">Add to Cart</button>
         </div>
 
         <!-- Product 2 -->
         <div class="product-card fade-up" style="transition-delay: 0.1s;">
-          <img src="images/product_sattvo.png" alt="Kids Sattvo">
+          <img src="images/product_sattvo.png" alt="Cashew Sattvo">
           <h3>CASHEW SATTVO</h3>
           <p class="desc">Nutrition that supports growth and energy.</p>
           <p class="price">₹ 350</p>
@@ -162,13 +162,13 @@
             <input type="number" value="1" min="1" readonly>
             <button type="button" onclick="changeQty(this, 1)">+</button>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Kids Sattvo', this)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Cashew Sattvo', this)">Add to Cart</button>
         </div>
 
         <!-- Product 3 -->
         <div class="product-card fade-up" style="transition-delay: 0.2s;">
-          <img src="images/product_sattvo.png" alt="Ayurvedic Sattvo">
-          <h3>PISTACHO SATTVO</h3>
+          <img src="images/product_sattvo.png" alt="Pistachio Sattvo">
+          <h3>PISTACHIO SATTVO</h3>
           <p class="desc">For immunity, balance and overall wellness.</p>
           <p class="price">₹ 350</p>
           <div class="qty-selector">
@@ -176,12 +176,12 @@
             <input type="number" value="1" min="1" readonly>
             <button type="button" onclick="changeQty(this, 1)">+</button>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Ayurvedic Sattvo', this)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Pistachio Sattvo', this)">Add to Cart</button>
         </div>
 
         <!-- Product 4 -->
         <div class="product-card fade-up" style="transition-delay: 0.3s;">
-          <img src="images/product_sattvo.png" alt="Sports Sattvo">
+          <img src="images/product_sattvo.png" alt="Almond Sattvo">
           <h3>ALMOND SATTVO</h3>
           <p class="desc">Fuel your strength and performance.</p>
           <p class="price">₹ 350</p>
@@ -190,7 +190,7 @@
             <input type="number" value="1" min="1" readonly>
             <button type="button" onclick="changeQty(this, 1)">+</button>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Sports Sattvo', this)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Almond Sattvo', this)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -223,46 +223,23 @@
       <div class="checkout-wrapper">
         <!-- Form -->
         <form id="orderForm" class="styled-form">
-          <div class="form-row">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="text" id="phone" placeholder="Phone Number" required>
+          <div id="validationMessage" class="validation-error" style="display:none; color: #e74c3c; margin-bottom: 15px; font-size: 14px;"></div>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+          <input type="tel" id="phone" placeholder="Enter your mobile number" required>
+          <input type="email" id="email" placeholder="Enter your email address" required>
+          <textarea id="address" class="elegant-textarea" placeholder="House / Flat Number,&#10;Building / Apartment Name,&#10;Street / Area,&#10;Landmark,&#10;City,&#10;State,&#10;Pincode" rows="6" required></textarea>
+
+          <div class="trust-section" style="margin: 25px 0; font-size: 14px; color: var(--text-charcoal);">
+            <div class="trust-item" style="margin-bottom: 8px;"><span style="color: var(--accent); margin-right: 8px; font-weight: bold;">✓</span> Trusted by 1000+ Customers</div>
+            <div class="trust-item" style="margin-bottom: 8px;"><span style="color: var(--accent); margin-right: 8px; font-weight: bold;">✓</span> Premium Nutritional Blend</div>
+            <div class="trust-item" style="margin-bottom: 8px;"><span style="color: var(--accent); margin-right: 8px; font-weight: bold;">✓</span> Quick WhatsApp Ordering</div>
+            <div class="trust-item"><span style="color: var(--accent); margin-right: 8px; font-weight: bold;">✓</span> Direct Customer Support</div>
           </div>
 
-          <input type="text" id="houseNo" placeholder="Email Address" required>
-
-          <div class="form-row">
-            <select
-              style="width: 50%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Inter', sans-serif;">
-              <option>Product</option>
-              <option>Classic Sattvo</option>
-              <option>Kids Sattvo</option>
-              <option>Ayurvedic Sattvo</option>
-              <option>Sports Sattvo</option>
-            </select>
-            <select
-              style="width: 50%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Inter', sans-serif;">
-              <option>Quantity</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-
-          <textarea id="landmark" placeholder="Delivery Address" rows="3" required></textarea>
-
-          <!-- Hidden inputs to keep checkout logic intact if it relies on these IDs -->
-          <input type="hidden" id="street1" value="N/A">
-          <input type="hidden" id="street2" value="">
-          <input type="hidden" id="city" value="N/A">
-          <input type="hidden" id="state" value="N/A">
-          <input type="hidden" id="pincode" value="000000">
-
-          <div class="order-actions">
-            <button type="submit" class="submit-btn" id="submitOrderBtn" disabled>PLACE ORDER &rarr;</button>
-            <button type="button" class="whatsapp-btn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="20">
-              ORDER ON WHATSAPP
+          <div class="order-actions" style="margin-top: 20px;">
+            <button type="submit" class="submit-btn wa-submit-btn" id="submitOrderBtn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 16px; padding: 18px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="24">
+              Order on WhatsApp
             </button>
           </div>
         </form>
@@ -280,19 +257,6 @@
 
     </div>
   </section>
-
-  <!-- SUCCESS POPUP -->
-  <div id="successPopup" class="popup">
-    <div class="popup-box">
-      <h3>Order Placed Successfully</h3>
-      <p>
-        Your order has been successfully placed!
-        For faster service and verification, you will now be redirected to WhatsApp
-        to confirm your order and location.
-      </p>
-      <button onclick="goToWhatsApp()">Finish</button>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -352,7 +316,6 @@
     </div>
   </div>
 
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="script.js"></script>
   <script>
     // Add simple intersection observer for fade animations
