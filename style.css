@@ -244,6 +244,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
   letter-spacing: 4px;
   text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  word-wrap: break-word;
+  padding: 0 20px;
 }
 
 .hero-box .tagline {
@@ -407,6 +409,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .product-card:hover {
@@ -488,7 +492,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .add-to-cart-btn {
-  padding: 12px 25px;
+  padding: 15px 25px; /* Larger tap target */
   background-color: var(--primary);
   color: var(--secondary);
   border: none;
@@ -499,6 +503,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
+  margin-top: auto; /* Push to bottom of card */
 }
 
 .add-to-cart-btn:hover {
@@ -613,24 +618,24 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--accent);
 }
 
-.whatsapp-btn {
-  flex: 1;
-  padding: 15px;
-  background-color: transparent;
-  color: var(--text-charcoal);
-  border: 1px solid #ddd;
-  border-radius: var(--radius-btn);
+.wa-submit-btn {
+  background-color: var(--primary) !important;
+  color: var(--secondary) !important;
   font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: 0.3s;
+  border-radius: var(--radius-btn);
+  transition: all 0.3s ease;
 }
 
-.whatsapp-btn:hover {
-  background-color: #f0f0f0;
+.wa-submit-btn:hover {
+  background-color: #3b4d1f !important; /* darker olive green */
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.elegant-textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
 }
 
 .cart-summary {
@@ -832,15 +837,30 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--primary);
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 0; /* Changed from 20px 0 for transition */
     gap: 20px;
-    display: none;
-  }
-  .menu.active {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
     display: flex;
   }
+  .menu.active {
+    max-height: 500px;
+    padding: 20px 0;
+  }
+  .menu a, .menu span {
+    padding: 10px; /* larger tap targets */
+  }
   .hero h1 {
-    font-size: 48px;
+    font-size: 42px; /* Prevent overflow */
+  }
+  .hero .tagline {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Equal spacing, adjust for mobile */
   }
   .about-container {
     flex-direction: column;
@@ -854,6 +874,13 @@ h1, h2, h3, h4, h5, h6 {
   }
   .styled-form {
     padding: 20px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .styled-form select {
+    width: 100% !important;
   }
   .footer-inner {
     flex-direction: column;
